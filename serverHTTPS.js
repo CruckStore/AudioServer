@@ -64,7 +64,9 @@ https.createServer(sslOptions, app).listen(PORT, () => {
 TO INSTALL HTTPS YOU NEED DOMAIN
 for my exemple its on vps windows i use 
 
-certbot certonly --manual --preferred-challenges dns -d audio.cruck.store
+"npm install express https fs http"
+
+"certbot certonly --manual --preferred-challenges dns -d audio.cruck.store"
 
 after say yes to all and you will see 
 
