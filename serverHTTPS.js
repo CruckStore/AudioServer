@@ -64,9 +64,9 @@ https.createServer(sslOptions, app).listen(PORT, () => {
 TO INSTALL HTTPS YOU NEED DOMAIN
 for my exemple its on vps windows i use 
 
-"npm install express https fs http"
+npm install express https fs http
 
-"certbot certonly --manual --preferred-challenges dns -d audio.cruck.store"
+certbot certonly --manual --preferred-challenges dns -d audio.cruck.store
 
 after say yes to all and you will see 
 
@@ -80,5 +80,15 @@ These files will be updated when the certificate renews.
 After its good just "node server.js"
 
 enjoy
+
+By the way if you use pterodactyl or any service like that go to your pc WINDOWS install that 
+https://github.com/certbot/certbot/releases/download/v2.9.0/certbot-beta-installer-win_amd64_signed.exe
+launch and tap
+certbot certonly --manual --preferred-challenges dns -d audio.cruck.store (change audio.cruck.store per your domain)
+
+setup ssl file just read
+
+take the two file he make put it on your pterodactyl folder and just use it like ./fullchain.pem (very simple) (i think abt that idk if its work)
+
 
 */
