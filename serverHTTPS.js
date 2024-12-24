@@ -7,7 +7,7 @@ const app = express();
 
 const http = require('http');
 
-// Redirection HTTP vers HTTPS
+// REDIRECT  HTTP to HTTPS
 http.createServer((req, res) => {
   res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
   res.end();
@@ -15,18 +15,15 @@ http.createServer((req, res) => {
   console.log('Redirecting all HTTP traffic to HTTPS');
 });
 
-// Chemins des certificats SSL (utilisez les chemins corrects)
 const sslOptions = {
-  key: fs.readFileSync('C:/Certbot/live/audio.cruck.store/privkey.pem'), // Chemin de la clé privée
-  cert: fs.readFileSync('C:/Certbot/live/audio.cruck.store/fullchain.pem'), // Chemin du certificat complet
+  key: fs.readFileSync('C:/Certbot/live/audio.cruck.store/privkey.pem'), 
+  cert: fs.readFileSync('C:/Certbot/live/audio.cruck.store/fullchain.pem'), 
 };
 
 const soundsPath = path.join(__dirname, 'sounds');
 
-// Configuration du dossier pour les fichiers audio
 app.use('/sounds', express.static(soundsPath));
 
-// Route pour afficher les fichiers audio
 app.get('/sounds', (req, res) => {
   fs.readdir(soundsPath, (err, files) => {
     if (err) {
@@ -53,7 +50,6 @@ app.get('/sounds', (req, res) => {
   });
 });
 
-// Démarrage du serveur HTTPS
 const PORT = 443; // Port HTTPS
 https.createServer(sslOptions, app).listen(PORT, () => {
   console.log(`Audio server started at https://audio.cruck.store`);
