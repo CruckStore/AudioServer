@@ -77,14 +77,7 @@ After its good just "node server.js"
 
 enjoy
 
-By the way if you use pterodactyl or any service like that go to your pc WINDOWS install that 
+By the way cert bot for windows :
 https://github.com/certbot/certbot/releases/download/v2.9.0/certbot-beta-installer-win_amd64_signed.exe
-launch and tap
-certbot certonly --manual --preferred-challenges dns -d audio.cruck.store (change audio.cruck.store per your domain)
-
-setup ssl file just read
-
-take the two file he make put it on your pterodactyl folder and just use it like ./fullchain.pem (very simple) (i think abt that idk if its work)
-
 
 */
